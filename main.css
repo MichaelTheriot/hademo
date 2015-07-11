@@ -1,0 +1,114 @@
+#mainwindow {
+  box-sizing: border-box;
+  padding-bottom: 32px;
+  height: 100%;
+}
+
+#leftpanel {
+  float: left;
+  width: 346px;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(6, 31, 94);
+}
+
+#rightpanel {
+  height: 100%;
+  background-color: rgb(6, 31, 94);
+}
+
+#controllers {
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+}
+
+#leftpanel::-webkit-scrollbar {
+  left: 0;
+  width: 16px;
+  background-color: rgba(205, 205, 205, 0.1);
+}
+#leftpanel:hover::-webkit-scrollbar {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+#leftpanel::-webkit-scrollbar-thumb:vertical {
+  background-color: rgba(205, 205, 205, 0.2);
+}
+#leftpanel:hover::-webkit-scrollbar-thumb:vertical {
+  background-color: rgba(205, 205, 205, 0.8);
+}
+#leftpanel::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgba(218, 218, 218, 0);
+}
+#leftpanel:hover::-webkit-scrollbar-thumb:vertical:hover {
+  background-color: rgba(218, 218, 218, 0.8);
+}
+#leftpanel::-webkit-scrollbar-button:start:decrement,
+#leftpanel::-webkit-scrollbar-button:end:increment {
+  height: 0;
+}
+
+#controllers ol {
+  list-style-type: none;
+  overflow: hidden;
+  padding: 0;
+}
+
+#controllers ol li {
+  float: left;
+  clear: left;
+  line-height: 20px;
+  width: 100%;
+}
+
+#controllers ol li:hover label {
+  background-color: rgb(24, 52, 126);
+}
+
+#controllers ol li input {
+  display: none;
+}
+
+#controllers ol li label {
+  display: block;
+  padding-left: 28px;
+  padding-right: 28px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+#controllers ol li input:checked + label {
+  background-color: rgb(0, 119, 198);
+}
+
+#controllers h1 {
+  padding: 24px 28px;
+  line-height: 36px;
+  font-size: 32px;
+  font-weight: normal;
+}
+
+#points {
+  background-color: rgb(2, 18, 59);
+}
+
+#footerpanel {
+  position: absolute;
+  bottom: 0;
+  border-top: 1px solid rgb(5, 24, 72);
+  height: 32px;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 13px;
+}
+
+#footerpanel #status{
+  padding-left: 28px;
+  padding-right: 28px;
+  line-height: 32px;
+}
