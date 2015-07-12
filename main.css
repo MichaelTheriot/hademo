@@ -1,54 +1,39 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+}
+
 #mainwindow {
   box-sizing: border-box;
   padding-bottom: 32px;
   height: 100%;
+  color: #fff;
 }
 
 #leftpanel {
+  position: relative;
   float: left;
   width: 346px;
   height: 100%;
-  overflow-y: scroll;
-  background-color: rgb(6, 31, 94);
-}
-
-#rightpanel {
-  height: 100%;
-  background-color: rgb(6, 31, 94);
-}
-
-#controllers {
-  color: #fff;
-  font-family: 'Segoe UI', sans-serif;
-  font-size: 14px;
+  background-color: rgb(6, 94, 31);
+  overflow-y: hidden;
   -webkit-user-select: none;
   user-select: none;
   cursor: default;
 }
 
-#leftpanel::-webkit-scrollbar {
-  left: 0;
-  width: 16px;
-  background-color: rgba(205, 205, 205, 0.1);
+#rightpanel {
+  height: 100%;
+  background-color: #fff;
 }
-#leftpanel:hover::-webkit-scrollbar {
-  background-color: rgba(255, 255, 255, 0.2);
+
+#controllers {
+  height: 100%;
+  overflow-y: scroll;
+  font-size: 14px;
 }
-#leftpanel::-webkit-scrollbar-thumb:vertical {
-  background-color: rgba(205, 205, 205, 0.2);
-}
-#leftpanel:hover::-webkit-scrollbar-thumb:vertical {
-  background-color: rgba(205, 205, 205, 0.8);
-}
-#leftpanel::-webkit-scrollbar-thumb:vertical:hover {
-  background-color: rgba(218, 218, 218, 0);
-}
-#leftpanel:hover::-webkit-scrollbar-thumb:vertical:hover {
-  background-color: rgba(218, 218, 218, 0.8);
-}
-#leftpanel::-webkit-scrollbar-button:start:decrement,
-#leftpanel::-webkit-scrollbar-button:end:increment {
-  height: 0;
+
+#controllers::-webkit-scrollbar {
+  width: 0;
 }
 
 #controllers ol {
@@ -65,7 +50,7 @@
 }
 
 #controllers ol li:hover label {
-  background-color: rgb(24, 52, 126);
+  background-color: rgb(24, 126, 52);
 }
 
 #controllers ol li input {
@@ -81,14 +66,37 @@
 }
 
 #controllers ol li input:checked + label {
-  background-color: rgb(0, 119, 198);
+  color: #000;
+  background-color: #fff;
 }
 
-#controllers h1 {
+#controllers label[data-type]::after {
+  content: attr(data-type);
+  display: block;
+  color: rgb(121, 183, 138);
+  line-height: 1.8em;
+}
+
+#controllers input:checked + label[data-type]::after {
+  color: #000;
+}
+
+#leftpanel h1 {
+  box-sizing: border-box;
+  background-color: inherit;
+  width: 100%;
+  height: 84px;
+  overflow: hidden;
   padding: 24px 28px;
   line-height: 36px;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: normal;
+  position: absolute;
+  top: 0;
+}
+
+#leftpanel h1 + * > * {
+  margin-top: 84px;
 }
 
 #points {
@@ -98,17 +106,51 @@
 #footerpanel {
   position: absolute;
   bottom: 0;
-  border-top: 1px solid rgb(5, 24, 72);
   height: 32px;
   width: 100%;
-  background-color: #000;
+  background-color: #222;
   color: #fff;
-  font-family: 'Segoe UI', sans-serif;
   font-size: 13px;
+  overflow: hidden;
 }
 
 #footerpanel #status{
   padding-left: 28px;
   padding-right: 28px;
   line-height: 32px;
+}
+
+#status p::after {
+  content: '...';
+}
+
+#notice {
+  position: fixed;
+  top: 160px;
+  width: 100%;
+  background-color: hsl(137, 88%, 12%);
+  box-shadow: 0 0 0 10000px rgba(100, 100, 100, 0.5);
+  padding: 0 20%;
+  box-sizing: border-box;
+}
+
+#notice h1 {
+  line-height: 48px;
+  font-size: 34px;
+  color: #fff;
+  padding-top: 40px;
+  padding-bottom: 32px;
+  font-weight: normal;
+}
+
+#notice input {
+  width: 100%;
+  line-height: 28px;
+  border: none;
+  background-color: #fff;
+  padding: 6px 8px;
+  font-size: 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #888;
+  margin-bottom: 56px;
 }
